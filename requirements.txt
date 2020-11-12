@@ -1,6 +1,7 @@
 requests
 pyopenssl
-pprint
+prettyprinter
+prettyprint
 queuelib
 fake_useragent
 python-whois
@@ -10,4 +11,4 @@ dnspython
 wafw00f
 python-whois
 sockets
-dryscrape
+google

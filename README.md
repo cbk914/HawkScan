@@ -11,9 +11,8 @@ This script use "Sublist3r" to scan subdomains (https://github.com/aboul3la/Subl
 This script use "waybacktool" to check in waybackmachine (https://github.com/Rhynorater/waybacktool)
 
 # News
-**!** Version 1.5.1      
-**!** New banner      
-**!** Fix bugs         
+**!** Version 1.5.5     
+**!** Add Google Dork requests         
 
 # Features
  - [x] URL fuzzing and dir/file detection
@@ -47,38 +46,40 @@ This script use "waybacktool" to check in waybackmachine (https://github.com/Rhy
  - [x] Testing bypass of waf if detected
  - [x] Testing if it's possible scanning with "localhost" host
  - [x] Dockerfile
- - [x] Active JavaScript on website 2.0 (full js)
+ - [x] Try differents bypass for 403 code error
+ - [x] JS parsing and analysis
+ - [x] Google Dork 
  
 # TODO 
 **P1 is the most important**
 
- - [ ] JS parsing and analysis [P1]
- - [ ] Analyse html code webpage [P1]
  - [ ] On-the-fly writing report [P1]
- - [ ] Try differents bypass for 403 code error [P2]
+ - [ ] Prefix filename (old_, copy of...) [P1]
  - [ ] Check HTTP headers/ssl security [P2]
  - [ ] Fuzzing amazonaws S3 Buckets [P2]
  - [ ] Anonymous routing through some proxy (http/s proxy list) [P2]
  - [ ] Check pastebin [P2]
  - [ ] Access token [P2]
- - [ ] Check source code and verify leak or sentsitive data in the Github [P2]
+ - [ ] Check source code and verify leak or sensitive data in the Github [P2]
+ - [ ] Analyse html code webpage [P3] => really necessary?
  - [ ] Check phpmyadmin version [P3]
  - [ ] Scan API endpoints/informations leaks [ASAP]
+ - [ ] Active JS on website 2.0 (full js) + Webengine for MacOS [ASAP]
  
- # Usage
+ # Installation
  > 
- 
+
+       git clone https://github.com/c0dejump/HawkScan.git && sudo python HawkScan/setup.py
+
        pip(3) install -r requirements.txt 
     If problem with pip3:    
        sudo python3 -m pip install -r requirements.txt
 
-    If you have problem to install the library "dryscrape" you can follow this link:
-       https://www.it-swarm.dev/fr/python/pip-install-dryscrape-echoue-avec-error-errno-2-ce-fichier-ou-repertoire-srcwebkit-server/827034588/
  > 
   
  >
      
-    usage: hawkscan.py [-h] [-u URL] [-w WORDLIST] [-s SUBDOMAINS] [-t THREAD] [-a USER_AGENT] [--redirect] [-r] [-p PREFIX] [-o OUTPUT] [--cookie COOKIE_] [--exclude EXCLUDE] [--timesleep TS] [--auto]
+    usage: hawkscan.py [-h] [-u URL] [-w WORDLIST] [-s SUBDOMAINS] [-t THREAD] [-a USER_AGENT] [--redirect] [-r] [-p PREFIX] [-o OUTPUT] [--cookie COOKIE_] [--exclude EXCLUDE] [--timesleep TS] [--auto] [--js]
  
  > 
  
@@ -99,6 +100,7 @@ This script use "waybacktool" to check in waybackmachine (https://github.com/Rhy
      --timesleep TS     To define a timesleep/rate-limit if app is unstable during scan                                 
      --auto             Automatic threads depending response to website. Max: 30      
      --update           For automatic update
+     --js               For try to found keys or token in the javascript page  
 
  >
 

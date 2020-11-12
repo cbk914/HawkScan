@@ -11,6 +11,7 @@ import traceback
 from config import PLUS, WARNING, INFO, LESS, LINE, FORBI, BACK
 
 class mini_scans:
+    
 
     def get_header(self, url, directory):
         """Get header of website (cookie, link, etc...)"""
@@ -142,7 +143,7 @@ class mini_scans:
             Some DBs may just return null
             '''
             print("{} null return".format(INFO))
-        print(LINE + "\n")
+        print(LINE)
         
 
     def wayback_check(self, url, directory):
